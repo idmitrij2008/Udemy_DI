@@ -3,8 +3,7 @@ package com.example.dependencyinjectionstart.example1
 class Component {
 
     fun inject(activity: Activity) {
-        activity.computer = getComputer()
-        activity.keyboard = Keyboard()
+//        activity.keyboard = Keyboard()
     }
 
     private fun getComputer(): Computer {
