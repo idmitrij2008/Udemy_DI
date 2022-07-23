@@ -13,16 +13,12 @@ import dagger.Component
 )
 interface ApplicationComponent {
 
-    @Component.Builder
-    interface ApplicationComponentBuilder {
-
-        @BindsInstance
-        fun context(context: Context): ApplicationComponentBuilder
-
-        @BindsInstance
-        fun currentTime(currentTime: Long): ApplicationComponentBuilder
-
-        fun build(): ApplicationComponent
+    @Component.Factory
+    interface ApplicationComponentFactory {
+        fun create(
+            @BindsInstance context: Context,
+            @BindsInstance timeMillis: Long
+        ): ApplicationComponent
     }
 
     fun inject(activity: MainActivity)
