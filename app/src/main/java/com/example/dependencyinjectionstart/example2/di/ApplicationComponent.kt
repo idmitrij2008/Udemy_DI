@@ -1,19 +1,16 @@
 package com.example.dependencyinjectionstart.example2.di
 
 import android.content.Context
-import com.example.dependencyinjectionstart.example2.data.database.ExampleDatabase
-import com.example.dependencyinjectionstart.example2.data.network.ExampleApiService
-import com.example.dependencyinjectionstart.example2.presentation.ExampleViewModel
 import com.example.dependencyinjectionstart.example2.presentation.MainActivity
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Singleton
 
 @ApplicationScope
 @Component(
     modules = [
         DataModule::class,
         DomainModule::class,
+        ViewModelModule::class
     ]
 )
 interface ApplicationComponent {
