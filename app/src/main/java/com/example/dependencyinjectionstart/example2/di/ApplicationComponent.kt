@@ -11,14 +11,11 @@ import dagger.Component
     modules = [
         DataModule::class,
         DomainModule::class,
-        ViewModelModule::class
     ]
 )
 interface ApplicationComponent {
 
-    fun inject(activity: MainActivity)
-
-    fun inject(activity: MainActivity2)
+    fun activityComponentFactory(): ActivityComponent.Factory
 
     @Component.Factory
     interface ApplicationComponentFactory {

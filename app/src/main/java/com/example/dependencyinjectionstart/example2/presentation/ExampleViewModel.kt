@@ -8,11 +8,12 @@ import javax.inject.Inject
 private const val TAG = "ExampleViewModel"
 
 class ExampleViewModel @Inject constructor(
-    private val useCase: ExampleUseCase
+    private val useCase: ExampleUseCase,
+    private val id: String,
 ): ViewModel() {
 
     fun method() {
-        Log.d(TAG, "$this")
+        Log.d(TAG, "$this $id")
         useCase()
     }
 }
