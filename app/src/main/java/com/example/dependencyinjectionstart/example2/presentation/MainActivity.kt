@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val daggerComponent by lazy {
         (application as ExampleApp).daggerComponent
             .activityComponentFactory()
-            .create("MY_ID")
+            .create("MY_ID", "MY_NAME")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
